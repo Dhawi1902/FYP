@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center my-5">
+    <h2>Generate Dental Images using GANs</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Caries</h4>
+            <button class="btn btn-primary" onclick="generateImages('caries')">Generate Caries Images</button>
+            <div id="caries-images" class="mt-3"></div>
+        </div>
+        <div class="col-md-4">
+            <h4>Gingivitis</h4>
+            <button class="btn btn-primary" onclick="generateImages('gingivitis')">Generate Gingivitis Images</button>
+            <div id="gingivitis-images" class="mt-3"></div>
+        </div>
+        <div class="col-md-4">
+            <h4>White Spot Lesion</h4>
+            <button class="btn btn-primary" onclick="generateImages('wsl')">Generate WSL Images</button>
+            <div id="wsl-images" class="mt-3"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function generateImages(imageType) {
+    fetch(`/generate_images/${imageType}`)
+        .then(response => response.json())
+        .then(images => {
+            const container = document.getElementById(`${imageType}-images`);
+            container.innerHTML = '';
+            images.forEach(img => {
+                const imgElement = document.createElement('img');
+                imgElement.src = img;
+                imgElement.className = 'img-fluid rounded my-2';
+                imgElement.style.maxWidth = '100px';
+                container.appendChild(imgElement);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+</script>
+{% endblock %}
