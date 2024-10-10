@@ -81,7 +81,7 @@ def load_model_on_demand(model_key):
 
 # Load models
 models = {
-    'resnet50': load_model(MODEL_PATHS['resnet50']),
+    'resnet50': load_model(MODEL_PATHS['resnet50'])
 }
 
 # for model in models.values():
