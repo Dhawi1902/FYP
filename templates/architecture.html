@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center my-5">
+    <h2>Model Architecture</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="padding: 20px">
+                <img class="card-img-top" src="{{ url_for('static', filename='images/vae_architecture.png') }}" alt="VAE Architecture">
+                <div class="card-body">
+                    <h5 class="card-title">VAE Architecture</h5>
+                    <p class="card-text">Variational Autoencoders (VAEs) are a type of generative model that uses neural networks to learn a compressed representation of input data.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="padding: 20px">
+                <img class="card-img-top" src="{{ url_for('static', filename='images/edgan_architecture.png') }}" alt="EDGAN Architecture">
+                <div class="card-body">
+                    <h5 class="card-title">EDGAN Architecture</h5>
+                    <p class="card-text">Encoder-Decoder GAN (EDGAN) is a type of Generative Adversarial Network that includes an encoder and a decoder for generating images.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="padding: 20px">
+                <img class="card-img-top" src="{{ url_for('static', filename='images/resnet50_architecture.png') }}" alt="RESNET50 Architecture">
+                <div class="card-body">
+                    <h5 class="card-title">RESNET50 Architecture</h5>
+                    <p class="card-text">ResNet50 is a residual neural network that is 50 layers deep. It is used for image recognition and classification tasks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

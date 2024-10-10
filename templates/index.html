@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+    <h1 class="text-center my-4">Welcome to AI-Powered Dental Diagnostics</h1>
+    <div class="d-flex justify-content-between align-items-start" style="margin-top: 50px;">
+        <!-- Left image -->
+        <div class="text-center" style="flex: 1; margin-right: 20px;">
+            <img src="{{ url_for('static', filename='images/ai_index.jpg') }}" class="img-fluid larger-image" alt="Left side image">
+        </div>
+
+        <!-- Center content -->
+        <div class="text-center" style="flex: 2;">
+            <div class="boxed-text"> <!-- Box around the text -->
+                <p class="lead wider-text">
+                    Explore the revolutionary technology of Generative Adversarial Networks (GANs) combined with Autoencoders in the realm of dental intraoral imaging. Our cutting-edge AI models are designed to assist dental professionals in accurately classifying dental caries, gingivitis, and white spot lesions.
+                </p>
+            </div>
+            <p class="wider-platform-text"> <!-- Applying a new class for wider spacing -->
+                Our platform leverages the power of GANs to generate synthetic images for training and validation, enhancing the robustness of our models. With the integration of Autoencoders, we ensure the preservation of essential features, improving the accuracy of disease classification. Dive into our sections on ResNet50 and ResNet101 to see these models in action, or explore the history and architecture behind our innovative approach.
+            </p>
+        </div>
+
+        <!-- Right image -->
+        <div class="text-center" style="flex: 1; margin-left: 20px;">
+            <img src="{{ url_for('static', filename='images/intraoral_index.jpeg') }}" class="img-fluid larger-image" alt="Right side image">
+        </div>
+    </div>
+    
+    <!-- GIF at the bottom -->
+    <div class="text-center my-5">
+        <img src="{{ url_for('static', filename='images/dental-hygiene.gif') }}" class="img-fluid gif-bottom" alt="Dental diagnostic animation">
+    </div>
+</div>
+
+<style>
+    /* Move the images down */
+    .larger-image {
+        width: 100%; /* Take full column width */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 350px; /* Adjust max width as necessary */
+    }
+
+    /* Add box around the text */
+    .boxed-text {
+        border: 2px solid #007BFF; /* Add blue border */
+        padding: 20px; /* Add some padding inside the box */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+        margin-bottom: 20px; /* Space below the box */
+    }
+
+    /* Widen the text area */
+    .wider-text {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Spread the "Our platform" text wider */
+    .wider-platform-text {
+        max-width: 80%; /* Make the text block take 80% of the available space */
+        margin: 0 auto; /* Center the text block */
+        padding: 0;
+        text-align: justify; /* Spread the text evenly */
+        font-size: 1.1rem;
+    }
+
+    /* Add space between the text and the images */
+    .text-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* GIF styling */
+    .gif-bottom {
+        max-width: 400px; /* Adjust the width of the GIF */
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 10px; /* Spacing above the GIF */
+    }
+
+    @media (max-width: 768px) {
+        .larger-image {
+            max-width: 250px; /* Adjust size for smaller screens */
+        }
+        .wider-platform-text {
+            max-width: 100%; /* Use full width on smaller screens */
+        }
+        .text-content {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .gif-bottom {
+            max-width: 250px; /* Adjust size for smaller screens */
+        }
+    }
+</style>
+{% endblock %}
