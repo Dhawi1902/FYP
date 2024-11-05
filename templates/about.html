@@ -67,10 +67,24 @@
         <div class="zigzag-image">
             <img src="path/to/methodology-image1.jpg" alt="Methodology Image 1">
         </div>
+<<<<<<< HEAD
         <div class="zigzag-content">
             <h2>Methodology</h2>
             <p>Explain the methodology you used in your project. Describe your approach, techniques, and tools used...</p>
         </div> 
+=======
+        <div class="card-body">
+            <p>The research project focuses on classifying dental images into caries, white spot lesions, and gingivitis using deep learning. Starting with a small dataset of 21 images, preprocessing involves resizing and normalizing the images. Autoencoders extract features, and GANs generate synthetic images to augment the dataset. The augmented set is then used to train a ResNet50 model for classification. This methodology enhances accuracy through data augmentation and advanced model training, improving the system's ability to diagnose dental issues.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='images/methodology_1.png') }}" class="img-fluid rounded" alt="Methodology Image 1">
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='images/methodology_2.png') }}" class="img-fluid rounded" alt="Methodology Image 2">
+                </div>
+            </div>
+        </div>
+>>>>>>> f869ec6366a1381209081f578079a181bc3b8e52
     </div>
 </div>
 {% endblock %}
