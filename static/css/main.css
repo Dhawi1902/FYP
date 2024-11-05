@@ -43,14 +43,97 @@ input[type="file"] {
     height: 50px;
     animation: spin 1s linear infinite;
 }
-.navbar-nav .nav-item .nav-link.active {
-            font-weight: bold;
-            color: #fff !important;
-            background-color: #343a40 !important;
+/* .navbar-nav .nav-item .nav-link.active {
+        font-weight: bold;
+        color: #fff !important;
+        background-color: #343a40 !important;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
             color: #ddd !important;
+} */
+
+/* Navbar styling */
+.navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: transparent;
+    font-family: sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+/* Navbar brand custom styling */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Pacifico', cursive;
+    color: #0077b6;
+}
+
+/* Center navbar links */
+.navbar-nav {
+    margin: 0 auto;
+}
+
+/* Profile icon and brand color */
+.profile-icon, .navbar-brand {
+    color: #0077b6;
+    font-size: 200%;
+}
+
+/* Background on scroll */
+.navbar-scrolled {
+    background-color: #ffffff;
+}
+
+/* Navbar link colors */
+.navbar-nav .nav-link,
+.dropdown-menu .dropdown-item {
+    color: #0077b6 !important;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    background-color: #e9f7fa;
+    border: none;
+}
+
+/* Body padding to account for fixed navbar */
+body {
+    padding-top: 30px;
+}
+
+
+/* Zig-Zag layout container */
+.zigzag-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 3em 5%;
+    background-color: #f8f9fa;
+}
+
+/* Alternate background for each section */
+.zigzag-section:nth-child(even) {
+    background-color: #e3f2fd;
+}
+
+/* Content and image styling */
+.zigzag-content, .zigzag-image {
+    flex: 1 1 45%;
+    padding: 2em;
+}
+
+.zigzag-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Text alignment adjustment */
+.zigzag-content p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
 }
 
 .disabled-link {
@@ -79,4 +162,25 @@ input[type="file"] {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+
+/* Center brand when navbar is collapsed */
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .zigzag-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .zigzag-content, .zigzag-image {
+        flex: 1 1 100%;
+    }
 }
